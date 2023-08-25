@@ -14,15 +14,43 @@ import javax.inject.Inject
 
 class AlbumAct @Inject constructor() : AbsActivity<ActivityAlbumBinding>() {
 
+    private val albumData : List<AlbumEntity> = listOf(
+        AlbumEntity(id = 1, img = R.drawable.ic_1),
+        AlbumEntity(id = 2, img = R.drawable.ic_2),
+        AlbumEntity(id = 3, img = R.drawable.ic_3),
+        AlbumEntity(id = 4, img = R.drawable.ic_4),
+        AlbumEntity(id = 5, img = R.drawable.ic_4),
+        AlbumEntity(id = 5, img = R.drawable.ic_5),
+        AlbumEntity(id = 6, img = R.drawable.ic_6),
+        AlbumEntity(id = 7, img = R.drawable.ic_7),
+        AlbumEntity(id = 8, img = R.drawable.ic_8),
+        AlbumEntity(id = 9, img = R.drawable.ic_9),
+        AlbumEntity(id = 10, img = R.drawable.ic_10),
+        AlbumEntity(id = 11, img = R.drawable.ic_11),
+        AlbumEntity(id = 1, img = R.drawable.ic_1),
+        AlbumEntity(id = 2, img = R.drawable.ic_2),
+        AlbumEntity(id = 3, img = R.drawable.ic_3),
+        AlbumEntity(id = 4, img = R.drawable.ic_4),
+        AlbumEntity(id = 5, img = R.drawable.ic_4),
+        AlbumEntity(id = 5, img = R.drawable.ic_5),
+        AlbumEntity(id = 6, img = R.drawable.ic_6),
+        AlbumEntity(id = 7, img = R.drawable.ic_7),
+        AlbumEntity(id = 8, img = R.drawable.ic_8),
+        AlbumEntity(id = 9, img = R.drawable.ic_9),
+        AlbumEntity(id = 10, img = R.drawable.ic_10),
+        AlbumEntity(id = 11, img = R.drawable.ic_11),
+    )
 
-
-
+    private val albumAdapter by lazy {
+        AlbumAdapter(albumData)
+    }
 
     override fun initView() {
 
         binding.AlbumRcv.layoutManager =
             GridLayoutManager(this@AlbumAct,3)
-        binding.AlbumRcv.adapter= AlbumAdapter(AlbumAdapter.dummyData)
+        binding.AlbumRcv.adapter = albumAdapter
+
 
 
     }
